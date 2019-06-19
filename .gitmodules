@@ -1,0 +1,3 @@
+[submodule "Orca/3rdParty/spdlog"]
+	path = Orca/3rdParty/spdlog
+	url = https://github.com/gabime/spdlog
