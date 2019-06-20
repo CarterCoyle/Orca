@@ -1,6 +1,7 @@
 #pragma once
+#include "OrcaPCH.h"
 #include "Log.h"
-#include "core.h"
+
 
 namespace Orca {
 	class ORCA_API Application

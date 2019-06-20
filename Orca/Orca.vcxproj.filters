@@ -7,6 +7,9 @@
     <Filter Include="Orca\Events">
       <UniqueIdentifier>{2E60413C-9A15-BA31-230A-B4088FBEB035}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Orca\openGL">
+      <UniqueIdentifier>{9E71CD9D-0A27-4693-931B-406AFFCF3C97}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Orca.h" />
@@ -25,6 +28,9 @@
     <ClInclude Include="src\Orca\core.h">
       <Filter>Orca</Filter>
     </ClInclude>
+    <ClInclude Include="src\Orca\openGL\glWindow.h">
+      <Filter>Orca\openGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\OrcaPCH.h" />
   </ItemGroup>
   <ItemGroup>
@@ -33,6 +39,9 @@
     </ClCompile>
     <ClCompile Include="src\Orca\Log.cpp">
       <Filter>Orca</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Orca\openGL\glWindow.cpp">
+      <Filter>Orca\openGL</Filter>
     </ClCompile>
     <ClCompile Include="src\OrcaPCH.cpp" />
   </ItemGroup>

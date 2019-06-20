@@ -26,6 +26,17 @@ project "Orca"
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
 	}
+
+	libdirs
+	{
+		"%{prj.name}/3rdParty/glfw/lib"
+	}
+
+	links
+	{
+		"glfw3",
+		"opengl32"
+	}
 	
 	includedirs
 	{
