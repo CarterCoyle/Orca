@@ -18,6 +18,9 @@ project "Orca"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "OrcaPCH.h"
+	pchsource "Orca/src/OrcaPCH.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
@@ -26,7 +29,9 @@ project "Orca"
 	
 	includedirs
 	{
-		"%{prj.name}/3rdParty/spdlog/include"
+		"%{prj.name}/3rdParty/spdlog/include",
+		"%{prj.name}/3rdParty/glfw/include",
+		"%{prj.name}/src"
 	}
 
 	filter "system:windows"

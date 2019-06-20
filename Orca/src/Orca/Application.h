@@ -1,4 +1,5 @@
 #pragma once
+#include "Log.h"
 #include "core.h"
 
 namespace Orca {
@@ -8,6 +9,8 @@ namespace Orca {
 		Application();
 		virtual ~Application();
 		void run();
+	private:
+		bool running = true;
 	};
 
 	Application* createApplication();

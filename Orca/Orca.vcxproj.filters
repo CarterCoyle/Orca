@@ -4,6 +4,9 @@
     <Filter Include="Orca">
       <UniqueIdentifier>{8A538A7C-768A-8B0D-1F77-71100B8D070F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Orca\Events">
+      <UniqueIdentifier>{2E60413C-9A15-BA31-230A-B4088FBEB035}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Orca.h" />
@@ -13,12 +16,16 @@
     <ClInclude Include="src\Orca\EntryPoint.h">
       <Filter>Orca</Filter>
     </ClInclude>
+    <ClInclude Include="src\Orca\Events\Event.h">
+      <Filter>Orca\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Orca\Log.h">
       <Filter>Orca</Filter>
     </ClInclude>
     <ClInclude Include="src\Orca\core.h">
       <Filter>Orca</Filter>
     </ClInclude>
+    <ClInclude Include="src\OrcaPCH.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Orca\Application.cpp">
@@ -27,5 +34,6 @@
     <ClCompile Include="src\Orca\Log.cpp">
       <Filter>Orca</Filter>
     </ClCompile>
+    <ClCompile Include="src\OrcaPCH.cpp" />
   </ItemGroup>
 </Project>

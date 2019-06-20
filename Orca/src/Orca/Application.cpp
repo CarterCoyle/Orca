@@ -1,10 +1,12 @@
+#include "OrcaPCH.h"
 #include "Application.h"
+
 
 namespace Orca
 {
 	Application::Application()
 	{
-
+		
 	}
 
 	Application::~Application()
@@ -14,6 +16,10 @@ namespace Orca
 
 	void Application::run()
 	{
-		while (true);
+		OC_CORE_INFO("ORCA INITIALISED!");
+		while (running)
+		{
+			
+		}
 	}
 }
