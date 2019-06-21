@@ -12,4 +12,4 @@
 	#define OC_ASSERT(x, ...) { if(!(x)) { OC_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 #else
 #define OC_ASSERT(x, ...);
-#endif  OC_ENABLE_ASSERTS
+#endif 

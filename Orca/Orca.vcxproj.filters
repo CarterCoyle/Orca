@@ -31,6 +31,9 @@
     <ClInclude Include="src\OrcaPCH.h" />
     <ClInclude Include="src\Orca\windows\window.h" />
     <ClInclude Include="src\Orca\windows\winWindow.h" />
+    <ClInclude Include="src\Orca\Events\keyEvent.h" />
+    <ClInclude Include="src\Orca\Events\mouseEvent.h" />
+    <ClInclude Include="src\Orca\Events\appEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Orca\Application.cpp">

@@ -77,6 +77,12 @@ namespace Orca {
 		glfwMakeContextCurrent(glWindow);
 		glfwSetWindowUserPointer(glWindow, &wWinProps);
 		setVSync(true);
+
+		//set callbacks for window events
+		/*glfwSetWindowSizeCallback(glWindow, [](GLFWwindow* window, int width, int height)
+		{
+			
+		}*/
 	}
 
 	void winWindow::Shutdown()

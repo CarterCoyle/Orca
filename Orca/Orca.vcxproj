@@ -152,7 +152,10 @@
     <ClInclude Include="src\Orca.h" />
     <ClInclude Include="src\Orca\Application.h" />
     <ClInclude Include="src\Orca\EntryPoint.h" />
+    <ClInclude Include="src\Orca\Events\appEvent.h" />
     <ClInclude Include="src\Orca\Events\Event.h" />
+    <ClInclude Include="src\Orca\Events\keyEvent.h" />
+    <ClInclude Include="src\Orca\Events\mouseEvent.h" />
     <ClInclude Include="src\Orca\Log.h" />
     <ClInclude Include="src\Orca\core.h" />
     <ClInclude Include="src\OrcaPCH.h" />
