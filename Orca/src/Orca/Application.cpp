@@ -20,7 +20,24 @@ namespace Orca
 
 	void Application::onEvent(Event& e)
 	{
-		OC_CORE_INFO("{0}", e.getName());
+		eventDispatcher ed(e);
+		bool success;
+		#ifdef LOG_ALL_EVENTS
+		OC_CORE_TRACE("{0}", e.toString());
+		#endif
+		success = ed.Dispatch<windowCloseEvent>(BIND_EVENT_FN(Application::onWindowClose));
+		success = ed.Dispatch<mouseButtonPressedEvent>(BIND_EVENT_FN(Application::dispatchTest));
+	}
+
+	bool Application::onWindowClose(windowCloseEvent& e)
+	{
+		running = false;
+		return true;
+	}
+
+	bool Application::dispatchTest(Event& e)
+	{
+		return true;
 	}
 
 	void Application::run()

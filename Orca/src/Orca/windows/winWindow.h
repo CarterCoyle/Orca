@@ -21,6 +21,7 @@ namespace Orca {
 		bool isVSyncEnabled() const override;
 
 	private:
+		void setCallbacks();
 		virtual void Init(const winProperties& props);
 		virtual void Shutdown();
 
@@ -28,8 +29,8 @@ namespace Orca {
 		{
 			unsigned int width, height;
 			std::string title;
-			bool vsync;
-			EventCallbackFn callback;
+			bool vsync;	
+			EventCallbackFn callback;	//set to an event. Use bind macro later with SetEventCallback to bind void function. See BIND_EVENT_FN
 		};
 
 		windowsWinProp wWinProps;

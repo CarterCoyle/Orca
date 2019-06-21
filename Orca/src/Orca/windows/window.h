@@ -1,6 +1,9 @@
 #pragma once
 #include "OrcaPCH.h"
 #include "Orca/Events/Event.h"
+#include "Orca/Events/keyEvent.h"
+#include "Orca/Events/mouseEvent.h"
+#include "Orca/Events/appEvent.h"
 
 namespace Orca {
 
@@ -21,7 +24,7 @@ namespace Orca {
 	class ORCA_API window
 	{
 	public:
-		using EventCallbackFn = std::function<void(Event&)>;
+		using EventCallbackFn = std::function<void(Event&)>;	
 
 		virtual ~window() {};
 
@@ -30,7 +33,7 @@ namespace Orca {
 		virtual unsigned int getWidth() const = 0;
 		virtual unsigned int getHeight() const = 0;
 
-		virtual void setEventCallback(const EventCallbackFn& callback) = 0;
+		virtual void setEventCallback(const EventCallbackFn& callback) = 0;	//takes a param of a void function with a reference to an event.This void function is then called after every event call back for this window
 		virtual void setVSync(bool isEnabled) = 0;
 		virtual bool isVSyncEnabled() const = 0;
 
