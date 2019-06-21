@@ -10,6 +10,8 @@ workspace "Orca"
 
 	outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+	include "Orca/3rdParty/glfw"
+
 project "Orca"
 	location "Orca"
 	kind "SharedLib"
@@ -27,15 +29,10 @@ project "Orca"
 		"%{prj.name}/src/**.cpp"
 	}
 
-	libdirs
-	{
-		"%{prj.name}/3rdParty/glfw/lib"
-	}
-
 	links
 	{
-		"glfw3",
-		"opengl32"
+		"glfw",
+		"opengl32.lib"
 	}
 	
 	includedirs
@@ -48,7 +45,7 @@ project "Orca"
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
-		systemversion "10.0.17763.0"
+		systemversion "latest"
 
 		defines
 		{

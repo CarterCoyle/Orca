@@ -7,7 +7,7 @@ namespace Orca
 {
 	Application::Application()
 	{
-		
+		appWindow = std::unique_ptr<window>(window::create());
 	}
 
 	Application::~Application()
@@ -18,10 +18,10 @@ namespace Orca
 	void Application::run()
 	{
 		OC_CORE_INFO("ORCA INITIALISED!");
-		GLFWwindow* win = glfwCreateWindow(1920, 1080, "Orca", glfwGetPrimaryMonitor(), NULL);
+
 		while (running)
 		{
-			
+			appWindow->onUpdate();
 		}
 	}
 }

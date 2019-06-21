@@ -19,7 +19,7 @@
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Orca</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -79,7 +79,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>OrcaPCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>OC_PLATFORM_WINDOWS;OC_BUILD_DLL;OC_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OC_ENABLE_ASSERTS;OC_PLATFORM_WINDOWS;OC_BUILD_DLL;OC_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>3rdParty\spdlog\include;3rdParty\glfw\include;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
@@ -89,8 +89,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>3rdParty\glfw\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Debug-windows-x86_64\Orca\Orca.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -116,8 +115,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>3rdParty\glfw\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Release-windows-x86_64\Orca\Orca.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -143,8 +141,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>3rdParty\glfw\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Dist-windows-x86_64\Orca\Orca.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -158,16 +155,22 @@
     <ClInclude Include="src\Orca\Events\Event.h" />
     <ClInclude Include="src\Orca\Log.h" />
     <ClInclude Include="src\Orca\core.h" />
-    <ClInclude Include="src\Orca\openGL\glWindow.h" />
     <ClInclude Include="src\OrcaPCH.h" />
+    <ClInclude Include="src\Orca\windows\window.h" />
+    <ClInclude Include="src\Orca\windows\winWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Orca\Application.cpp" />
     <ClCompile Include="src\Orca\Log.cpp" />
-    <ClCompile Include="src\Orca\openGL\glWindow.cpp" />
     <ClCompile Include="src\OrcaPCH.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Orca\windows\winWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="3rdParty\glfw\glfw.vcxproj">
+      <Project>{9563977C-819A-980D-2A87-7E10169D140F}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -28,10 +28,9 @@
     <ClInclude Include="src\Orca\core.h">
       <Filter>Orca</Filter>
     </ClInclude>
-    <ClInclude Include="src\Orca\openGL\glWindow.h">
-      <Filter>Orca\openGL</Filter>
-    </ClInclude>
     <ClInclude Include="src\OrcaPCH.h" />
+    <ClInclude Include="src\Orca\windows\window.h" />
+    <ClInclude Include="src\Orca\windows\winWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Orca\Application.cpp">
@@ -40,9 +39,7 @@
     <ClCompile Include="src\Orca\Log.cpp">
       <Filter>Orca</Filter>
     </ClCompile>
-    <ClCompile Include="src\Orca\openGL\glWindow.cpp">
-      <Filter>Orca\openGL</Filter>
-    </ClCompile>
     <ClCompile Include="src\OrcaPCH.cpp" />
+    <ClCompile Include="src\Orca\windows\winWindow.cpp" />
   </ItemGroup>
 </Project>
