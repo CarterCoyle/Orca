@@ -9,6 +9,7 @@
 #include <vector>
 
 #include "Orca/core.h"
+#include "Orca/Log.h"
 
 #ifdef OC_PLATFORM_WINDOWS
 	#include <windows.h>

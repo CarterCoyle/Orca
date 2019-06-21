@@ -50,7 +50,7 @@ project "Orca"
 		defines
 		{
 			"OC_PLATFORM_WINDOWS",
-			"OC_BUILD_DLL"
+			"OC_BUILD_DLL",
 		}
 
 		postbuildcommands
@@ -60,14 +60,22 @@ project "Orca"
 
 		filter "configurations:Debug"
 			defines "OC_DEBUG"
+			buildoptions "/MDd"
 			symbols "On"
+
+		defines
+		{
+			"LOG_ALL_EVENTS"
+		}
 
 		filter "configurations:Release"
 			defines "OC_RELEASE"
+			buildoptions "/MD"
 			optimize "On"
 
 		filter "configurations:Dist"
 			defines "OC_DIST"
+			buildoptions "/MD"
 			optimize "On"
 
 project "Sandbox"
@@ -107,12 +115,15 @@ project "Sandbox"
 
 		filter "configurations:Debug"
 			defines "OC_DEBUG"
+			buildoptions "/MDd"
 			symbols "On"
 
 		filter "configurations:Release"
 			defines "OC_RELEASE"
+			buildoptions "/MD"
 			optimize "On"
 
 		filter "configurations:Dist"
 			defines "OC_DIST"
+			buildoptions "/MD"
 			optimize "On"

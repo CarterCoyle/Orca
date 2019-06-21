@@ -22,11 +22,19 @@ namespace Orca
 	{
 		eventDispatcher ed(e);
 		bool success;
+
 		#ifdef LOG_ALL_EVENTS
 		OC_CORE_TRACE("{0}", e.toString());
 		#endif
+
+		for (auto it = stack.end(); it != stack.begin();)
+		{
+			(*--it)->onEvent(e);
+			if (e.getHandled())
+				break;
+		}
+
 		success = ed.Dispatch<windowCloseEvent>(BIND_EVENT_FN(Application::onWindowClose));
-		success = ed.Dispatch<mouseButtonPressedEvent>(BIND_EVENT_FN(Application::dispatchTest));
 	}
 
 	bool Application::onWindowClose(windowCloseEvent& e)
@@ -35,9 +43,14 @@ namespace Orca
 		return true;
 	}
 
-	bool Application::dispatchTest(Event& e)
+	void Application::pushLayer(layer* layer)
 	{
-		return true;
+		stack.pushLayer(layer);
+	}
+
+	void Application::pushOverlay(layer* overlay)
+	{
+		stack.pushOverlay(overlay);
 	}
 
 	void Application::run()
@@ -47,6 +60,8 @@ namespace Orca
 		while (running)
 		{
 			appWindow->onUpdate();
+			for (layer* layer : stack)
+				layer->onUpdate();
 		}
 	}
 }

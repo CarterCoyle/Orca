@@ -1,5 +1,4 @@
 #include "OrcaPCH.h"
-#include "Orca/Log.h"
 #include "GLFW/glfw3.h"
 #include "window.h"
 

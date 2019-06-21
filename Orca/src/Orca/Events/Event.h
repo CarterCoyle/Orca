@@ -1,6 +1,5 @@
 #pragma once
 #include "OrcaPCH.h"
-#include "Orca/Log.h"
 
 namespace Orca {
 
@@ -31,7 +30,7 @@ namespace Orca {
 
 	class ORCA_API Event
 	{
-		friend class eventDispatcher;
+		friend class eventDispatcher; 
 
 	public:
 		virtual EventType getEventType() const = 0;
@@ -39,6 +38,7 @@ namespace Orca {
 		virtual EventCategory getCategory() const = 0;
 		virtual std::string toString() const { return getName(); }
 		static EventType getStaticType() { return EventType::None; }
+		bool getHandled() { return isHandled; }
 
 		inline bool isInCategory(EventCategory cat)
 		{

@@ -1,9 +1,9 @@
 #pragma once
 #include "OrcaPCH.h"
 #include "windows/window.h"	
+#include "Layers/layerStack.h"
 #include "Events/Event.h"
 #include "Events/keyEvent.h"
-#include "Log.h"
 
 
 namespace Orca {
@@ -14,11 +14,14 @@ namespace Orca {
 		virtual ~Application();
 		void run();
 		void onEvent(Event& e);
-		bool dispatchTest(Event& e);
+
+		void pushLayer(layer* layer);
+		void pushOverlay(layer* overlay);
 	private:
 		bool onWindowClose(windowCloseEvent& e);
 		std::unique_ptr<window> appWindow;
 		bool running = true;
+		layerStack stack;
 	};
 
 	Application* createApplication();

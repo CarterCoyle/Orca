@@ -79,11 +79,12 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>OrcaPCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>LOG_ALL_EVENTS;OC_ENABLE_ASSERTS;OC_PLATFORM_WINDOWS;OC_BUILD_DLL;OC_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OC_PLATFORM_WINDOWS;OC_BUILD_DLL;OC_DEBUG;LOG_ALL_EVENTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>3rdParty\spdlog\include;3rdParty\glfw\include;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -109,6 +110,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -135,6 +137,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -152,23 +155,27 @@
     <ClInclude Include="src\Orca.h" />
     <ClInclude Include="src\Orca\Application.h" />
     <ClInclude Include="src\Orca\EntryPoint.h" />
-    <ClInclude Include="src\Orca\Events\appEvent.h" />
     <ClInclude Include="src\Orca\Events\Event.h" />
+    <ClInclude Include="src\Orca\Events\appEvent.h" />
     <ClInclude Include="src\Orca\Events\keyEvent.h" />
     <ClInclude Include="src\Orca\Events\mouseEvent.h" />
+    <ClInclude Include="src\Orca\Layers\layer.h" />
+    <ClInclude Include="src\Orca\Layers\layerStack.h" />
     <ClInclude Include="src\Orca\Log.h" />
     <ClInclude Include="src\Orca\core.h" />
-    <ClInclude Include="src\OrcaPCH.h" />
-    <ClInclude Include="src\Orca\windows\window.h" />
     <ClInclude Include="src\Orca\windows\winWindow.h" />
+    <ClInclude Include="src\Orca\windows\window.h" />
+    <ClInclude Include="src\OrcaPCH.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Orca\Application.cpp" />
+    <ClCompile Include="src\Orca\Layers\layer.cpp" />
+    <ClCompile Include="src\Orca\Layers\layerStack.cpp" />
     <ClCompile Include="src\Orca\Log.cpp" />
+    <ClCompile Include="src\Orca\windows\winWindow.cpp" />
     <ClCompile Include="src\OrcaPCH.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\Orca\windows\winWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="3rdParty\glfw\glfw.vcxproj">

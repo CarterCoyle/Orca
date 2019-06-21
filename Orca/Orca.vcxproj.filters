@@ -7,8 +7,11 @@
     <Filter Include="Orca\Events">
       <UniqueIdentifier>{2E60413C-9A15-BA31-230A-B4088FBEB035}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Orca\openGL">
-      <UniqueIdentifier>{9E71CD9D-0A27-4693-931B-406AFFCF3C97}</UniqueIdentifier>
+    <Filter Include="Orca\Layers">
+      <UniqueIdentifier>{094B244B-7500-9D40-FEF4-96176AA99344}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Orca\windows">
+      <UniqueIdentifier>{E47F97AF-D0E2-2654-7968-5F0A65AAF2D6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -22,27 +25,51 @@
     <ClInclude Include="src\Orca\Events\Event.h">
       <Filter>Orca\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Orca\Events\appEvent.h">
+      <Filter>Orca\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Orca\Events\keyEvent.h">
+      <Filter>Orca\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Orca\Events\mouseEvent.h">
+      <Filter>Orca\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Orca\Layers\layer.h">
+      <Filter>Orca\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Orca\Layers\layerStack.h">
+      <Filter>Orca\Layers</Filter>
+    </ClInclude>
     <ClInclude Include="src\Orca\Log.h">
       <Filter>Orca</Filter>
     </ClInclude>
     <ClInclude Include="src\Orca\core.h">
       <Filter>Orca</Filter>
     </ClInclude>
+    <ClInclude Include="src\Orca\windows\winWindow.h">
+      <Filter>Orca\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Orca\windows\window.h">
+      <Filter>Orca\windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\OrcaPCH.h" />
-    <ClInclude Include="src\Orca\windows\window.h" />
-    <ClInclude Include="src\Orca\windows\winWindow.h" />
-    <ClInclude Include="src\Orca\Events\keyEvent.h" />
-    <ClInclude Include="src\Orca\Events\mouseEvent.h" />
-    <ClInclude Include="src\Orca\Events\appEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Orca\Application.cpp">
       <Filter>Orca</Filter>
     </ClCompile>
+    <ClCompile Include="src\Orca\Layers\layer.cpp">
+      <Filter>Orca\Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Orca\Layers\layerStack.cpp">
+      <Filter>Orca\Layers</Filter>
+    </ClCompile>
     <ClCompile Include="src\Orca\Log.cpp">
       <Filter>Orca</Filter>
     </ClCompile>
+    <ClCompile Include="src\Orca\windows\winWindow.cpp">
+      <Filter>Orca\windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\OrcaPCH.cpp" />
-    <ClCompile Include="src\Orca\windows\winWindow.cpp" />
   </ItemGroup>
 </Project>
