@@ -4,3 +4,6 @@
 [submodule "Orca/3rdParty/glfw"]
 	path = Orca/3rdParty/glfw
 	url = https://github.com/glfw/glfw
+[submodule "Orca/3rdParty/imgui"]
+	path = Orca/3rdParty/imgui
+	url = https://github.com/ocornut/imgui

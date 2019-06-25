@@ -10,6 +10,15 @@
     <Filter Include="Orca\Layers">
       <UniqueIdentifier>{094B244B-7500-9D40-FEF4-96176AA99344}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Orca\debugStuff">
+      <UniqueIdentifier>{A87EF337-140A-61FC-1D1B-E4F08925BDFC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Orca\input">
+      <UniqueIdentifier>{2913EE51-15CB-2F9F-7ED2-08FB6AA9CA8F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Orca\openGlGUI">
+      <UniqueIdentifier>{433A0D25-2F08-012B-189C-71510409DD8F}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Orca\windows">
       <UniqueIdentifier>{E47F97AF-D0E2-2654-7968-5F0A65AAF2D6}</UniqueIdentifier>
     </Filter>
@@ -40,11 +49,23 @@
     <ClInclude Include="src\Orca\Layers\layerStack.h">
       <Filter>Orca\Layers</Filter>
     </ClInclude>
-    <ClInclude Include="src\Orca\Log.h">
-      <Filter>Orca</Filter>
-    </ClInclude>
     <ClInclude Include="src\Orca\core.h">
       <Filter>Orca</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Orca\debugStuff\Log.h">
+      <Filter>Orca\debugStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Orca\debugStuff\imGuiLayer.h">
+      <Filter>Orca\debugStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Orca\input\input.h">
+      <Filter>Orca\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Orca\input\winInput.h">
+      <Filter>Orca\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Orca\openGlGUI\imGUIOpenGlRenderer.h">
+      <Filter>Orca\openGlGUI</Filter>
     </ClInclude>
     <ClInclude Include="src\Orca\windows\winWindow.h">
       <Filter>Orca\windows</Filter>
@@ -64,8 +85,20 @@
     <ClCompile Include="src\Orca\Layers\layerStack.cpp">
       <Filter>Orca\Layers</Filter>
     </ClCompile>
-    <ClCompile Include="src\Orca\Log.cpp">
-      <Filter>Orca</Filter>
+    <ClCompile Include="src\Orca\debugStuff\Log.cpp">
+      <Filter>Orca\debugStuff</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Orca\debugStuff\imGuiLayer.cpp">
+      <Filter>Orca\debugStuff</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Orca\input\input.cpp">
+      <Filter>Orca\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Orca\input\winInput.cpp">
+      <Filter>Orca\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Orca\openGlGUI\imGUIOpenGlRenderer.cpp">
+      <Filter>Orca\openGlGUI</Filter>
     </ClCompile>
     <ClCompile Include="src\Orca\windows\winWindow.cpp">
       <Filter>Orca\windows</Filter>

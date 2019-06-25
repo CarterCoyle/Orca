@@ -8,7 +8,7 @@ namespace Orca {
 		None = 0,
 		windowClose, windowResize, windowFocus, windowLostFocus, windowMoved,
 		appTick, appUpdate, appRender,
-		keyPressed, keyReleased,
+		keyPressed, keyReleased, keyTyped,
 		mouseButtonPressed, mouseButtonReleased, mouseMoved, mouseScrolled
 	};
 
@@ -16,7 +16,7 @@ namespace Orca {
 	{
 		None = 0,
 		app,
-		input,
+		Input,
 		key,
 		mouse,
 		mouseButton
@@ -42,7 +42,7 @@ namespace Orca {
 
 		inline bool isInCategory(EventCategory cat)
 		{
-			if (cat == input || cat == mouse)
+			if (cat == Input || cat == mouse)
 				return (getCategory() >= cat);
 			else
 				return (getCategory() == cat);
@@ -67,12 +67,8 @@ namespace Orca {
 			if (d_event.getEventType() == T::getStaticType())
 			{
 				d_event.isHandled = func(*(T*)& d_event);
-				OC_CORE_INFO("{0} successfully dispatched", d_event.getName());
 				return true;
 			}
-			//OC_CORE_ERROR("{0} failed to dispatch", d_event.getName());
-			//OC_CORE_ERROR("Type A: {0}", (int)d_event.getEventType());
-			//OC_CORE_ERROR("Type B: {0}", (int)T::getStaticType());
 			return false;
 		}
 	private:

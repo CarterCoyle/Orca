@@ -82,6 +82,8 @@ namespace Orca {
 
 		glWindow = glfwCreateWindow(wWinProps.width, wWinProps.height, wWinProps.title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(glWindow);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		OC_ASSERT(status, "GLAD failed to initialise");
 		glfwSetWindowUserPointer(glWindow, &wWinProps);	//links pointer of our custom window properties to GLFWwindow instance
 		setVSync(true);
 
@@ -165,6 +167,14 @@ namespace Orca {
 
 				mouseMovedEvent movEvent(xPos, yPos);
 				props.callback(movEvent);
+			});
+
+		glfwSetCharCallback(glWindow, [](GLFWwindow* window, unsigned int keycode)
+			{
+				windowsWinProp& props = *(windowsWinProp*)glfwGetWindowUserPointer(window);
+
+				keyTypedEvent type(keycode);
+				props.callback(type);
 			});
 	}
 

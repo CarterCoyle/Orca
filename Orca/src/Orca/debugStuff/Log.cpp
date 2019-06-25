@@ -11,10 +11,10 @@ namespace Orca {
 	{
 		spdlog::set_pattern("%^[%T] %n: %v%$");
 		s_CoreLogger = spdlog::stdout_color_mt("ORCA");
-		OC_CORE_INFO("{0} logger initialised!", s_CoreLogger->name());
+		OC_CORE_INFO("logger initialised!");
 		s_CoreLogger->set_level(spdlog::level::trace);
 		s_ClientLogger = spdlog::stdout_color_mt("APP");
-		OC_CLIENT_INFO("{0} logger initialised!", s_ClientLogger->name());
+		OC_CLIENT_INFO("logger initialised!");
 		s_ClientLogger->set_level(spdlog::level::trace);
 	}
 

@@ -8,12 +8,11 @@ public:
 	
 	void onUpdate() override
 	{
-		OC_CLIENT_TRACE("sandboxLayer::update");
+
 	}
 
 	void onEvent(Orca::Event& e) override
 	{
-		OC_CLIENT_INFO("{0}", e.getName());
 	}
 };
 
@@ -23,6 +22,7 @@ public:
 	sandbox()
 	{
 		pushLayer(new sandboxLayer("sandboxLayer"));
+		pushOverlay(new Orca::imGuiLayer());
 	}
 	~sandbox()
 	{

@@ -33,10 +33,11 @@ namespace Orca {
 		virtual unsigned int getWidth() const = 0;
 		virtual unsigned int getHeight() const = 0;
 
-		virtual void setEventCallback(const EventCallbackFn& callback) = 0;	//takes a param of a void function with a reference to an event.This void function is then called after every event call back for this window
+		virtual void setEventCallback(const EventCallbackFn& callback) = 0;	//takes a param of a void function with a reference to an event. This void function is then called after every event call back for this window
 		virtual void setVSync(bool isEnabled) = 0;
 		virtual bool isVSyncEnabled() const = 0;
 
+		virtual void* getNativeWindow() const = 0;	//override in platform specific files to return a pointer to glWindow/HWND etc.
 		static window* create(const winProperties& props = winProperties());
 	};
 }

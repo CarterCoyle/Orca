@@ -4,11 +4,13 @@
 
 
 namespace Orca
-{
-	#define BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
+{	
+	Application* Application::instance = nullptr;
 
 	Application::Application()
 	{
+		OC_ASSERT(!instance, "Application already running!");
+		instance = this;
 		appWindow = std::unique_ptr<window>(window::create());
 		appWindow->setEventCallback(BIND_EVENT_FN(Application::onEvent));	//binds window eventcallbacks to onEvent function. See below for onEvent
 	}
@@ -45,11 +47,13 @@ namespace Orca
 
 	void Application::pushLayer(layer* layer)
 	{
+		layer->onAttach();
 		stack.pushLayer(layer);
 	}
 
 	void Application::pushOverlay(layer* overlay)
 	{
+		overlay->onAttach();
 		stack.pushOverlay(overlay);
 	}
 
@@ -60,6 +64,8 @@ namespace Orca
 		while (running)
 		{
 			appWindow->onUpdate();
+			glClearColor(1, 0, 1, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
 			for (layer* layer : stack)
 				layer->onUpdate();
 		}

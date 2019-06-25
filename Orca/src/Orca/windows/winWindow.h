@@ -1,6 +1,7 @@
 #include "OrcaPCH.h"
-#include "GLFW/glfw3.h"
 #include "window.h"
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
 
 namespace Orca {
 
@@ -19,6 +20,7 @@ namespace Orca {
 		void setVSync(bool enabled) override;
 		bool isVSyncEnabled() const override;
 
+		inline virtual void* getNativeWindow() const override { return glWindow; }
 	private:
 		void setCallbacks();
 		virtual void Init(const winProperties& props);

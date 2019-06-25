@@ -11,6 +11,8 @@ workspace "Orca"
 	outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 	include "Orca/3rdParty/glfw"
+	include "Orca/3rdParty/glad"
+	include "Orca/3rdParty/imgui"
 
 project "Orca"
 	location "Orca"
@@ -32,6 +34,8 @@ project "Orca"
 	links
 	{
 		"glfw",
+		"glad",
+		"imgui",
 		"opengl32.lib"
 	}
 	
@@ -39,12 +43,14 @@ project "Orca"
 	{
 		"%{prj.name}/3rdParty/spdlog/include",
 		"%{prj.name}/3rdParty/glfw/include",
+		"%{prj.name}/3rdParty/glad/include",
+		"%{prj.name}/3rdParty/imgui",
 		"%{prj.name}/src"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "Off"
 		systemversion "latest"
 
 		defines
@@ -60,22 +66,17 @@ project "Orca"
 
 		filter "configurations:Debug"
 			defines "OC_DEBUG"
-			buildoptions "/MDd"
+			runtime "Debug"
 			symbols "On"
-
-		defines
-		{
-			"LOG_ALL_EVENTS"
-		}
 
 		filter "configurations:Release"
 			defines "OC_RELEASE"
-			buildoptions "/MD"
+			runtime "Release"
 			optimize "On"
 
 		filter "configurations:Dist"
 			defines "OC_DIST"
-			buildoptions "/MD"
+			runtime "Release"
 			optimize "On"
 
 project "Sandbox"
@@ -95,17 +96,21 @@ project "Sandbox"
 	includedirs
 	{
 		"Orca/3rdParty/spdlog/include",
+		"Orca/3rdParty/imgui",
+		"Orca/3rdParty/glfw/include",
+		"Orca/3rdParty/glad/include",
 		"Orca/src"
 	}
 
 	links
 	{
-		"Orca"
+		"Orca",
+		"imgui"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "Off"
 		systemversion "10.0.17763.0"
 
 		defines
@@ -115,15 +120,15 @@ project "Sandbox"
 
 		filter "configurations:Debug"
 			defines "OC_DEBUG"
-			buildoptions "/MDd"
+			runtime "Debug"
 			symbols "On"
 
 		filter "configurations:Release"
 			defines "OC_RELEASE"
-			buildoptions "/MD"
+			runtime "Release"
 			optimize "On"
 
 		filter "configurations:Dist"
 			defines "OC_DIST"
-			buildoptions "/MD"
+			runtime "Release"
 			optimize "On"

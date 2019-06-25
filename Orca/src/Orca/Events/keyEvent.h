@@ -37,6 +37,23 @@ namespace Orca {
 		int repeatCount;
 	};
 
+	class ORCA_API keyTypedEvent : public keyEvent
+	{
+	public:
+		keyTypedEvent(int keycode)
+			: keyEvent(keycode) {}
+
+
+		std::string toString() const override
+		{
+			std::stringstream ss;
+			ss << "KeyTypedEvent: " << keyCode;
+			return ss.str();
+		}
+
+		EVENT_TYPE(keyTyped)
+	};
+
 	class ORCA_API keyReleasedEvent : public keyEvent
 	{
 	public:
