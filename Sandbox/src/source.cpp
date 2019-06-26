@@ -22,7 +22,6 @@ public:
 	sandbox()
 	{
 		pushLayer(new sandboxLayer("sandboxLayer"));
-		pushOverlay(new Orca::imGuiLayer());
 	}
 	~sandbox()
 	{

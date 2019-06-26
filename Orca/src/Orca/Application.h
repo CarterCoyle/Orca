@@ -1,5 +1,7 @@
 #pragma once
+
 #include "OrcaPCH.h"
+#include "debugStuff/imGuiLayer.h"
 #include "windows/window.h"	
 #include "Layers/layerStack.h"
 #include "Events/Event.h"
@@ -24,6 +26,7 @@ namespace Orca {
 	private:
 		bool onWindowClose(windowCloseEvent& e);
 		std::unique_ptr<window> appWindow;
+		imGuiLayer* appImGuiLayer;
 		bool running = true;
 		layerStack stack;
 		static Application* instance;

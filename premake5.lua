@@ -28,7 +28,9 @@ project "Orca"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/3rdParty/glm/glm/**.inl",
+		"%{prj.name}/3rdParty/glm/glm/**.hpp"
 	}
 
 	links
@@ -45,6 +47,7 @@ project "Orca"
 		"%{prj.name}/3rdParty/glfw/include",
 		"%{prj.name}/3rdParty/glad/include",
 		"%{prj.name}/3rdParty/imgui",
+		"%{prj.name}/3rdParty/glm/glm",
 		"%{prj.name}/src"
 	}
 
@@ -99,6 +102,7 @@ project "Sandbox"
 		"Orca/3rdParty/imgui",
 		"Orca/3rdParty/glfw/include",
 		"Orca/3rdParty/glad/include",
+		"Orca/3rdParty/glm/glm",
 		"Orca/src"
 	}
 

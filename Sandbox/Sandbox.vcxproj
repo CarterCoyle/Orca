@@ -79,7 +79,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>OC_PLATFORM_WINDOWS;OC_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Orca\3rdParty\spdlog\include;..\Orca\3rdParty\imgui;..\Orca\3rdParty\glfw\include;..\Orca\3rdParty\glad\include;..\Orca\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Orca\3rdParty\spdlog\include;..\Orca\3rdParty\imgui;..\Orca\3rdParty\glfw\include;..\Orca\3rdParty\glad\include;..\Orca\3rdParty\glm\glm;..\Orca\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -95,7 +95,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>OC_PLATFORM_WINDOWS;OC_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Orca\3rdParty\spdlog\include;..\Orca\3rdParty\imgui;..\Orca\3rdParty\glfw\include;..\Orca\3rdParty\glad\include;..\Orca\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Orca\3rdParty\spdlog\include;..\Orca\3rdParty\imgui;..\Orca\3rdParty\glfw\include;..\Orca\3rdParty\glad\include;..\Orca\3rdParty\glm\glm;..\Orca\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -115,7 +115,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>OC_PLATFORM_WINDOWS;OC_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Orca\3rdParty\spdlog\include;..\Orca\3rdParty\imgui;..\Orca\3rdParty\glfw\include;..\Orca\3rdParty\glad\include;..\Orca\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Orca\3rdParty\spdlog\include;..\Orca\3rdParty\imgui;..\Orca\3rdParty\glfw\include;..\Orca\3rdParty\glad\include;..\Orca\3rdParty\glm\glm;..\Orca\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>

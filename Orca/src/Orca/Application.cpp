@@ -1,7 +1,7 @@
 #include "OrcaPCH.h"
+
 #include "GLFW/glfw3.h"
 #include "Application.h"
-
 
 namespace Orca
 {	
@@ -12,6 +12,8 @@ namespace Orca
 		OC_ASSERT(!instance, "Application already running!");
 		instance = this;
 		appWindow = std::unique_ptr<window>(window::create());
+		appImGuiLayer = new imGuiLayer();
+		pushOverlay(appImGuiLayer);
 		appWindow->setEventCallback(BIND_EVENT_FN(Application::onEvent));	//binds window eventcallbacks to onEvent function. See below for onEvent
 	}
 
@@ -41,6 +43,8 @@ namespace Orca
 
 	bool Application::onWindowClose(windowCloseEvent& e)
 	{
+		stack.popOverlay(appImGuiLayer);
+		delete appImGuiLayer;
 		running = false;
 		return true;
 	}
@@ -68,6 +72,11 @@ namespace Orca
 			glClear(GL_COLOR_BUFFER_BIT);
 			for (layer* layer : stack)
 				layer->onUpdate();
+
+			appImGuiLayer->begin();
+			for (layer* layer : stack)
+				layer->onImGuiRender();
+			appImGuiLayer->end();
 		}
 	}
 }

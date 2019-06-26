@@ -1,8 +1,6 @@
-#include "OrcaPCH.h"
+#pragma once
+
 #include "Orca/Layers/layer.h"
-#include "Orca/openGlGUI/imGUIOpenGlRenderer.h"
-#include "GLFW/glfw3.h"
-#include "Orca/Application.h"
 
 namespace Orca {
 
@@ -12,21 +10,13 @@ namespace Orca {
 		imGuiLayer(const std::string& name = "imguiLayer");
 		~imGuiLayer();
 
-		void onAttach() override;
-		void onDetach() override;
-		void onUpdate() override;
-		void onEvent(Event& e) override;
-	private:
-		bool onMouseButtonPressed(mouseButtonPressedEvent& e);
-		bool onMouseButtonReleased(mouseButtonReleasedEvent& e);
-		bool onMouseMoved(mouseMovedEvent& e);
-		bool onMouseScrolled(mouseScrolledEvent& e);
-		bool onKeyPressed(keyPressedEvent& e);
-		bool onKeyReleased(keyReleasedEvent& e);
-		bool onKeyTyped(keyTypedEvent& e);
-		bool onWindowResize(windowResizeEvent& e);
+		virtual void onAttach() override;
+		virtual void onDetach() override;
+		virtual void onImGuiRender() override;
 
+		void begin();
+		void end();
+	private:
 		float layerTime = 0.0f;
-		Application& app = Application::getApp();
 	};
 }

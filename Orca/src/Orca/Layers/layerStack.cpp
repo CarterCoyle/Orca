@@ -5,7 +5,6 @@ namespace Orca {
 	
 	layerStack::layerStack()
 	{
-		layerInsert = layers.begin();
 	}
 
 	layerStack::~layerStack()
@@ -16,7 +15,8 @@ namespace Orca {
 
 	void layerStack::pushLayer(layer* layer)
 	{
-		layerInsert = layers.emplace(layerInsert, layer);
+		layers.emplace(layers.begin() + layerInsertIndex, layer);
+		++layerInsertIndex;
 	}
 
 	void layerStack::pushOverlay(layer* overlay)
@@ -30,7 +30,7 @@ namespace Orca {
 		if (it != layers.end())
 		{
 			layers.erase(it);
-			layerInsert--;
+			layerInsertIndex--;
 		}
 	}
 

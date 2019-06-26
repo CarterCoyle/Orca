@@ -20,6 +20,6 @@ namespace Orca {
 
 	private:
 		std::vector<layer*> layers;
-		std::vector<layer*>::iterator layerInsert;
+		unsigned int layerInsertIndex = 0;
 	};
 }
